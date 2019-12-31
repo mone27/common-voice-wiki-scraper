@@ -33,7 +33,7 @@ python WikiExtractor.py --json ../enwiki-latest-pages-articles-multistream.xml
 3. Scrap the sentences into a new file from the WikiExtractor output dir (this might take more than 6h to finish)
 ```bash
 cd ../common-voice-wiki-scraper
-cargo run -- extract -l english -d ../wikiextractor/text/ >> wiki.en.txt
+cargo run --release -- extract -l english -d ../wikiextractor/text/ >> wiki.en.txt
 ```
 
 *Tip: You don't need this last process to finish to start observing the output, wiki.en.txt should get a few hundred and thousands sentences in just a few minutes, and you can use that as a way to estimate the quality of the output early on and stop the process if you are not happy.*
@@ -80,7 +80,7 @@ After running step 1 and 2 from the Usage section above, run:
 
 ```bash
 cd ../common-voice-wiki-scraper
-cargo run -- extract -d ../wikiextractor/text/ --no_check >> wiki.en.all.txt
+cargo run --release -- extract -d ../wikiextractor/text/ --no_check >> wiki.en.all.txt
 ```
 
 Then you can use the cvtools scripts to generate a list of the word frequency
